@@ -40,6 +40,20 @@ function LinkedList() {
         this.tail = newNode;
     };
 
+    this.removeHead = function() {
+        const val = this.head.val;
+        if(this.head && this.head.next){
+            this.head = this.head.next;
+            this.head.prev = null;
+
+        };
+        if(this.head === this.tail){
+            this.head = null;
+            this.tail = null;
+        };
+        return val;
+    };
+
     // this.getHead = function() {
     //     console.log("head: " + this.head)
     // }
